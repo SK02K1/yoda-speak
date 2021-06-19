@@ -1,14 +1,16 @@
 const inputContainer = document.querySelector(".input-container");
 const btnTranslate = document.querySelector(".btn-translate");
 const outputContainer = document.querySelector(".output-container");
-const url = "https://lessonfourapi.tanaypratap.repl.co/translate/yoda.json";
+const url = "brokehttps://lessonfourapi.tanaypratap.repl.co/translate/yoda.json";
 
 const constructUrl = text => `${url}?text=${text}`;
+const errorHandler = error => alert(`${error} (Please try after some time!)`);
 
 const btnClickHandler = () => {
     fetch(constructUrl(inputContainer.value))
     .then(Response => Response.json())
     .then(json => console.log(json.contents.translated))
+    .catch(errorHandler)
 }
 
 btnTranslate.addEventListener("click", btnClickHandler)

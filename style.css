@@ -56,3 +56,10 @@ p {
     color: white;
 
 }
+
+.img-yoda {
+    display: block;
+    width: 50%;
+    height: auto;
+    margin: 0 auto;
+}
